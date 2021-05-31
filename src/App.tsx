@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
+import List from './components/List'
 
 interface IState {
   todoList: {
-    name: string
+    category: string
     todo: string
     url: string
     description?: string
@@ -21,6 +21,7 @@ function App() {
   return (
     <div className='App'>
       <h1> Learn TypeScripts by building todo list </h1>
+      <List todoList={todoList} />
     </div>
   )
 }
