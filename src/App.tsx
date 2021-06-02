@@ -1,11 +1,13 @@
-import { Box } from '@chakra-ui/layout'
+import { Box, Center } from '@chakra-ui/layout'
 import { VStack } from '@chakra-ui/layout'
 import { Container } from '@chakra-ui/layout'
 import React, { useState } from 'react'
 import './App.css'
+import AddToList from './components/AddToList'
 import Todo from './components/Todo'
+import { ChakraProvider } from '@chakra-ui/react'
 
-interface IState {
+export interface IState {
   todoList: {
     category: string
     title: string
@@ -16,25 +18,30 @@ interface IState {
 function App() {
   const [todoList, setTodoList] = useState<IState['todoList']>([
     {
-      category: 'sw',
-      title: 'title1',
-      description: 'asdasasdfasdfasdfasdfasafd',
+      category: 'SW',
+      title: 'Patterns in SW',
+      description: 'Do ti today!',
     },
     {
-      category: 'sw',
-      title: 'title2',
+      category: 'ML',
+      title: 'Deep Learning',
+      description: 'You have to finish this by next week',
     },
   ])
 
   return (
-    <VStack>
-      <header>
-        <h2>Learn TypeScripts by building todo list</h2>{' '}
-      </header>
-      <Container maxW='container.xl'>
-        <Todo todoList={todoList} />
-      </Container>
-    </VStack>
+    <ChakraProvider>
+      <Center>
+        <VStack>
+          <header>
+            <h2>Learn TypeScripts by building todo list</h2>{' '}
+          </header>
+
+          <Todo todoList={todoList} setTodoList={setTodoList} />
+          <AddToList todoList={todoList} setTodoList={setTodoList} />
+        </VStack>
+      </Center>
+    </ChakraProvider>
   )
 }
 
