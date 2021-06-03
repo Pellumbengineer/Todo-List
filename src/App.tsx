@@ -1,8 +1,6 @@
-import { Box, Center } from '@chakra-ui/layout'
+import { Center } from '@chakra-ui/layout'
 import { VStack } from '@chakra-ui/layout'
-import { Container } from '@chakra-ui/layout'
 import React, { useState } from 'react'
-import './App.css'
 import AddToList from './components/AddToList'
 import Todo from './components/Todo'
 import { ChakraProvider } from '@chakra-ui/react'
@@ -15,7 +13,7 @@ export interface IState {
   }[]
 }
 
-function App() {
+function App(): JSX.Element {
   const [todoList, setTodoList] = useState<IState['todoList']>([
     {
       category: 'SW',

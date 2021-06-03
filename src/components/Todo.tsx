@@ -2,15 +2,12 @@ import React from 'react'
 import { IState as Props } from '../App'
 import {
   Grid,
-  Container,
   Box,
   Text,
   useColorModeValue,
   Center,
-  List,
   Button,
   Stack,
-  VStack,
 } from '@chakra-ui/react'
 
 interface IProps {
@@ -18,7 +15,7 @@ interface IProps {
   setTodoList: React.Dispatch<React.SetStateAction<Props['todoList']>>
 }
 
-const Todo: React.FC<IProps> = ({ todoList, setTodoList }) => {
+const Todo: React.FC<IProps> = ({ todoList, setTodoList }: IProps) => {
   const backgroundColor = useColorModeValue('white', 'gray.800')
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -32,7 +29,13 @@ const Todo: React.FC<IProps> = ({ todoList, setTodoList }) => {
   const renderList = (): JSX.Element[] => {
     return todoList.map((todo) => {
       return (
-        <Box maxW='sm' borderWidth='1px' borderRadius='lg' bg={backgroundColor}>
+        <Box
+          key={todo.title}
+          maxW='sm'
+          borderWidth='1px'
+          borderRadius='lg'
+          bg={backgroundColor}
+        >
           <Stack>
             <Box
               borderRadius='xl'

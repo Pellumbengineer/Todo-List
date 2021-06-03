@@ -9,7 +9,7 @@ interface IProps {
   setTodoList: React.Dispatch<React.SetStateAction<Props['todoList']>>
 }
 
-const AddToList: React.FC<IProps> = ({ todoList, setTodoList }) => {
+const AddToList: React.FC<IProps> = ({ todoList, setTodoList }: IProps) => {
   const [input, setInput] = useState({
     category: '',
     title: '',
