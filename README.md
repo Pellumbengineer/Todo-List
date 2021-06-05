@@ -5,7 +5,7 @@ Below you can see the simple todo list application build with typescript and cha
 ## What I Learned
 1.What is TypeScript
 
-2.Create a TypeScript React App
+2.Created a TypeScript React App
 
 3.Handling State
 
