@@ -32,7 +32,7 @@ function App(): JSX.Element {
       <Center>
         <VStack>
           <header>
-            <h2>Learn TypeScripts by building todo list</h2>{' '}
+            <h2>Learn TypesScript by building todo list simple app</h2>{' '}
           </header>
 
           <Todo todoList={todoList} setTodoList={setTodoList} />
