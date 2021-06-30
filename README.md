@@ -15,5 +15,3 @@ Below you can see the simple todo list application build with typescript and cha
 
 6.Handling Events
 
-![Screenshot](screenshot.png)
-
